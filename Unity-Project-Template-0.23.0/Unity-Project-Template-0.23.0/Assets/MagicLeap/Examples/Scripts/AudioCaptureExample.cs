@@ -163,11 +163,12 @@ namespace MagicLeap
             // Adjust the parrot to always face the camera.
             _parrotTransform.rotation = Quaternion.Slerp(
                 _parrotTransform.rotation, CameraDirection, Time.deltaTime * ROTATION_DAMPING);
-
+          
             if (_isCapturing)
             {
                 if (_captureMode == CaptureMode.Delayed)
                 {
+                   
                     DetectAudio();
                 }
 
@@ -203,6 +204,7 @@ namespace MagicLeap
             // Use the first detected Microphone device.
             if (Microphone.devices.Length > 0)
             {
+                
                 _deviceMicrophone = Microphone.devices[0];
             }
 
@@ -319,13 +321,15 @@ namespace MagicLeap
         {
             if (audioSource.isPlaying)
             {
+               
                 // Analyze the playback spectrum data to detect spikes in volume.
                 audioSource.GetSpectrumData(_audioSamples, 0, FFTWindow.Rectangular);
                 _audioMaxSample = _audioSamples.Max();
-
+            
                 // Toggle the talking animation.
                 if (_audioMaxSample > AUDIO_SENSITVITY_DECIBEL)
                 {
+                    
                     EnableTalkingAnimation(true, 1);
                 }
                 else
