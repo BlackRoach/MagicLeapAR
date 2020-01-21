@@ -1,5 +1,8 @@
+
+
+using FullSerializer;
 /**
-* Copyright 2018, 2019 IBM Corp. All Rights Reserved.
+* Copyright 2018 IBM Corp. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,20 +17,21 @@
 * limitations under the License.
 *
 */
-
-using Newtonsoft.Json;
-
-namespace IBM.Watson.ToneAnalyzer.V3.Model
+namespace IBM.Watson.DeveloperCloud.Services.ToneAnalyzer.v3
 {
     /// <summary>
-    /// Input for the general-purpose endpoint.
+    /// ToneInput.
     /// </summary>
     public class ToneInput
     {
         /// <summary>
         /// The input content that the service is to analyze.
         /// </summary>
-        [JsonProperty("text", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// The input content that the service is to analyze.
+        /// </value>
+        [fsProperty("text")]
         public string Text { get; set; }
     }
+
 }

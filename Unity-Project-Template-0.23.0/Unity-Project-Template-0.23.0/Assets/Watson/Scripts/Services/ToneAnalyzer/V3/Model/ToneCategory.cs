@@ -1,5 +1,5 @@
 /**
-* Copyright 2018, 2019 IBM Corp. All Rights Reserved.
+* Copyright 2018 IBM Corp. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -15,31 +15,42 @@
 *
 */
 
+using FullSerializer;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
-namespace IBM.Watson.ToneAnalyzer.V3.Model
+namespace IBM.Watson.DeveloperCloud.Services.ToneAnalyzer.v3
 {
     /// <summary>
-    /// The category for a tone from the input content.
+    /// ToneCategory.
     /// </summary>
     public class ToneCategory
     {
         /// <summary>
         /// An array of `ToneScore` objects that provides the results for the tones of the category.
         /// </summary>
-        [JsonProperty("tones", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// An array of `ToneScore` objects that provides the results for the tones of the category.
+        /// </value>
+        [fsProperty("tones")]
         public List<ToneScore> Tones { get; set; }
         /// <summary>
         /// The unique, non-localized identifier of the category for the results. The service can return results for the
         /// following category IDs: `emotion_tone`, `language_tone`, and `social_tone`.
         /// </summary>
-        [JsonProperty("category_id", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// The unique, non-localized identifier of the category for the results. The service can return results for the
+        /// following category IDs: `emotion_tone`, `language_tone`, and `social_tone`.
+        /// </value>
+        [fsProperty("category_id")]
         public string CategoryId { get; set; }
         /// <summary>
         /// The user-visible, localized name of the category.
         /// </summary>
-        [JsonProperty("category_name", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// The user-visible, localized name of the category.
+        /// </value>
+        [fsProperty("category_name")]
         public string CategoryName { get; set; }
     }
+
 }

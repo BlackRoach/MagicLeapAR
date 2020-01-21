@@ -1,5 +1,5 @@
 /**
-* Copyright 2018, 2019 IBM Corp. All Rights Reserved.
+* Copyright 2018 IBM Corp. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -15,26 +15,34 @@
 *
 */
 
+using FullSerializer;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
-namespace IBM.Watson.ToneAnalyzer.V3.Model
+namespace IBM.Watson.DeveloperCloud.Services.ToneAnalyzer.v3
 {
     /// <summary>
-    /// The results of the analysis for the utterances of the input content.
+    /// UtteranceAnalyses.
     /// </summary>
     public class UtteranceAnalyses
     {
         /// <summary>
         /// An array of `UtteranceAnalysis` objects that provides the results for each utterance of the input.
         /// </summary>
-        [JsonProperty("utterances_tone", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// An array of `UtteranceAnalysis` objects that provides the results for each utterance of the input.
+        /// </value>
+        [fsProperty("utterances_tone")]
         public List<UtteranceAnalysis> UtterancesTone { get; set; }
         /// <summary>
         /// **`2017-09-21`:** A warning message if the content contains more than 50 utterances. The service analyzes
         /// only the first 50 utterances. **`2016-05-19`:** Not returned.
         /// </summary>
-        [JsonProperty("warning", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// **`2017-09-21`:** A warning message if the content contains more than 50 utterances. The service analyzes
+        /// only the first 50 utterances. **`2016-05-19`:** Not returned.
+        /// </value>
+        [fsProperty("warning")]
         public string Warning { get; set; }
     }
+
 }

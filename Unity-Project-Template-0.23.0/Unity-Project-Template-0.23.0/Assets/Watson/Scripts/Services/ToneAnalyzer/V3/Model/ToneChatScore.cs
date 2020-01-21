@@ -1,5 +1,8 @@
+
+
+using FullSerializer;
 /**
-* Copyright 2018, 2019 IBM Corp. All Rights Reserved.
+* Copyright 2018 IBM Corp. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,70 +17,43 @@
 * limitations under the License.
 *
 */
-
-using Newtonsoft.Json;
-
-namespace IBM.Watson.ToneAnalyzer.V3.Model
+namespace IBM.Watson.DeveloperCloud.Services.ToneAnalyzer.v3
 {
     /// <summary>
-    /// The score for an utterance from the input content.
+    /// ToneChatScore.
     /// </summary>
     public class ToneChatScore
     {
         /// <summary>
-        /// The unique, non-localized identifier of the tone for the results. The service returns results only for tones
-        /// whose scores meet a minimum threshold of 0.5.
-        /// </summary>
-        public class ToneIdValue
-        {
-            /// <summary>
-            /// Constant EXCITED for excited
-            /// </summary>
-            public const string EXCITED = "excited";
-            /// <summary>
-            /// Constant FRUSTRATED for frustrated
-            /// </summary>
-            public const string FRUSTRATED = "frustrated";
-            /// <summary>
-            /// Constant IMPOLITE for impolite
-            /// </summary>
-            public const string IMPOLITE = "impolite";
-            /// <summary>
-            /// Constant POLITE for polite
-            /// </summary>
-            public const string POLITE = "polite";
-            /// <summary>
-            /// Constant SAD for sad
-            /// </summary>
-            public const string SAD = "sad";
-            /// <summary>
-            /// Constant SATISFIED for satisfied
-            /// </summary>
-            public const string SATISFIED = "satisfied";
-            /// <summary>
-            /// Constant SYMPATHETIC for sympathetic
-            /// </summary>
-            public const string SYMPATHETIC = "sympathetic";
-            
-        }
-
-        /// <summary>
-        /// The unique, non-localized identifier of the tone for the results. The service returns results only for tones
-        /// whose scores meet a minimum threshold of 0.5.
-        /// Constants for possible values can be found using ToneChatScore.ToneIdValue
-        /// </summary>
-        [JsonProperty("tone_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ToneId { get; set; }
-        /// <summary>
         /// The score for the tone in the range of 0.5 to 1. A score greater than 0.75 indicates a high likelihood that
         /// the tone is perceived in the utterance.
         /// </summary>
-        [JsonProperty("score", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// The score for the tone in the range of 0.5 to 1. A score greater than 0.75 indicates a high likelihood that
+        /// the tone is perceived in the utterance.
+        /// </value>
+        [fsProperty("score")]
         public double? Score { get; set; }
+        /// <summary>
+        /// The unique, non-localized identifier of the tone for the results. The service can return results for the
+        /// following tone IDs: `sad`, `frustrated`, `satisfied`, `excited`, `polite`, `impolite`, and `sympathetic`.
+        /// The service returns results only for tones whose scores meet a minimum threshold of 0.5.
+        /// </summary>
+        /// <value>
+        /// The unique, non-localized identifier of the tone for the results. The service can return results for the
+        /// following tone IDs: `sad`, `frustrated`, `satisfied`, `excited`, `polite`, `impolite`, and `sympathetic`.
+        /// The service returns results only for tones whose scores meet a minimum threshold of 0.5.
+        /// </value>
+        [fsProperty("tone_id")]
+        public string ToneId { get; set; }
         /// <summary>
         /// The user-visible, localized name of the tone.
         /// </summary>
-        [JsonProperty("tone_name", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// The user-visible, localized name of the tone.
+        /// </value>
+        [fsProperty("tone_name")]
         public string ToneName { get; set; }
     }
+
 }

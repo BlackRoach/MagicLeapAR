@@ -1,5 +1,8 @@
+
+
+using FullSerializer;
 /**
-* Copyright 2018, 2019 IBM Corp. All Rights Reserved.
+* Copyright 2018 IBM Corp. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,13 +17,10 @@
 * limitations under the License.
 *
 */
-
-using Newtonsoft.Json;
-
-namespace IBM.Watson.ToneAnalyzer.V3.Model
+namespace IBM.Watson.DeveloperCloud.Services.ToneAnalyzer.v3
 {
     /// <summary>
-    /// An utterance for the input of the general-purpose endpoint.
+    /// Utterance.
     /// </summary>
     public class Utterance
     {
@@ -28,12 +28,20 @@ namespace IBM.Watson.ToneAnalyzer.V3.Model
         /// An utterance contributed by a user in the conversation that is to be analyzed. The utterance can contain
         /// multiple sentences.
         /// </summary>
-        [JsonProperty("text", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// An utterance contributed by a user in the conversation that is to be analyzed. The utterance can contain
+        /// multiple sentences.
+        /// </value>
+        [fsProperty("text")]
         public string Text { get; set; }
         /// <summary>
         /// A string that identifies the user who contributed the utterance specified by the `text` parameter.
         /// </summary>
-        [JsonProperty("user", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// A string that identifies the user who contributed the utterance specified by the `text` parameter.
+        /// </value>
+        [fsProperty("user")]
         public string User { get; set; }
     }
+
 }

@@ -1,5 +1,5 @@
 /**
-* Copyright 2018, 2019 IBM Corp. All Rights Reserved.
+* Copyright 2018 IBM Corp. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -15,27 +15,36 @@
 *
 */
 
+using FullSerializer;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
-namespace IBM.Watson.ToneAnalyzer.V3.Model
+namespace IBM.Watson.DeveloperCloud.Services.ToneAnalyzer.v3
 {
     /// <summary>
-    /// The tone analysis results for the input from the general-purpose endpoint.
+    /// ToneAnalysis.
     /// </summary>
     public class ToneAnalysis
     {
         /// <summary>
-        /// The results of the analysis for the full input content.
+        /// An object of type `DocumentAnalysis` that provides the results of the analysis for the full input document.
         /// </summary>
-        [JsonProperty("document_tone", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// An object of type `DocumentAnalysis` that provides the results of the analysis for the full input document.
+        /// </value>
+        [fsProperty("document_tone")]
         public DocumentAnalysis DocumentTone { get; set; }
         /// <summary>
         /// An array of `SentenceAnalysis` objects that provides the results of the analysis for the individual
         /// sentences of the input content. The service returns results only for the first 100 sentences of the input.
         /// The field is omitted if the `sentences` parameter of the request is set to `false`.
         /// </summary>
-        [JsonProperty("sentences_tone", NullValueHandling = NullValueHandling.Ignore)]
+        /// <value>
+        /// An array of `SentenceAnalysis` objects that provides the results of the analysis for the individual
+        /// sentences of the input content. The service returns results only for the first 100 sentences of the input.
+        /// The field is omitted if the `sentences` parameter of the request is set to `false`.
+        /// </value>
+        [fsProperty("sentences_tone")]
         public List<SentenceAnalysis> SentencesTone { get; set; }
     }
+
 }

@@ -78,9 +78,3 @@ Docs/publishing-release.md.meta
 /Scripts/Editor/Help/
 /Scripts/Editor/Help.meta
 */MRefBuilder.config.meta
-node_modules
-package-lock.json
-package-lock.json.meta
-
-.pre-commit-config.yaml
-.secrets.baseline
