@@ -29,10 +29,12 @@ namespace UnityEngine.XR.MagicLeap
         public float CanvasDistanceUpwards = 0.0f;
 
         [Tooltip("The speed at which this object changes its position.")]
-        public float PositionLerpSpeed = 5f;
+        public float PositionLerpSpeed = 20f;
 
         [Tooltip("The speed at which this object changes its rotation.")]
-        public float RotationLerpSpeed = 5f;
+        public float RotationLerpSpeed = 20f;
+
+        public float _distance = 2f;
         #endregion
 
         #region Private Varibles
@@ -73,6 +75,8 @@ namespace UnityEngine.XR.MagicLeap
         /// </summary>
         void Update()
         {
+            //_canvas.transform.position = _camera.transform.position + (_camera.transform.forward * CanvasDistanceForwards) + (_camera.transform.up * CanvasDistanceUpwards) + (_camera.transform.right * _distance);
+            //_canvas.transform.rotation = _camera.transform.rotation;
             // Move the object CanvasDistance units in front of the camera.
             float posSpeed = Time.deltaTime * PositionLerpSpeed;
             Vector3 posTo = _camera.transform.position + (_camera.transform.forward * CanvasDistanceForwards) + (_camera.transform.up * CanvasDistanceUpwards);
